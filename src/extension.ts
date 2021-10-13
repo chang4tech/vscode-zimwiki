@@ -13,14 +13,6 @@ async function createNew() {
 		// const workspaceRootPath = vscode.workspace.rootPath;
 		const workspaceFolders = vscode.workspace.workspaceFolders;
   
-	//   const workingPathDir = getWorkingPathDir(
-	// 	_context,
-	// 	vscode.window.activeTextEditor,
-	// 	vscode.workspace
-	//   );
-	//   console.log("workingPathDir: " + workingPathDir);
-	// console.log("workspaceRootPath: " + workspaceRootPath);
-		// vscode.window.showInformationMessage("workspaceFolders: " + workspaceFolders);
 
 		let name: string | undefined = await vscode.window.showInputBox({
 			prompt: "Enter a name for new note.",

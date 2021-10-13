@@ -3,6 +3,9 @@
   "displayName": "Zim-Wiki",
   "description": "A VSCode Extension for Zim Wiki NoteBook.",
   "version": "0.0.1",
+  "publisher": "Chang4Tech",
+  "repository": "https://github.com/chang4tech/vscode-zimwiki",
+  "icon": "images/zim48.png",
   "engines": {
     "vscode": "^1.61.0"
   },
