@@ -1,0 +1,151 @@
+{
+  "name": "zim-wiki",
+  "displayName": "Zim-Wiki",
+  "description": "VSCode Extension for Zim Wiki NoteBook.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.61.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:zim-wiki.helloZim",
+    "onCommand:zim-wiki.createNote"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "zim-wiki.helloZim",
+        "title": "Zim: Hello Zim"
+      },
+      {
+        "command": "zim-wiki.createNote",
+        "title": "Zim: Create Note"
+      }
+    ],
+    "walkthroughs": [
+      {
+        "id": "zim-wiki",
+        "title": "Zim Wiki",
+        "description": "A VSCode Extension for Zim Wiki Notebook",
+        "steps": [
+          {
+            "id": "runcommand",
+            "title": "Run Command",
+            "description": "This step will run a command and check off once it has been run.\n[Run Command](command:getting-started-sample.runCommand)",
+            "media": {
+              "image": "",
+              "altText": "Empty image"
+            },
+            "completionEvents": [
+              "onCommand:zim-wiki.helloZim"
+            ]
+          },
+          {
+            "id": "changesetting",
+            "title": "Change Setting",
+            "description": "This step will change a setting and check off when the setting has changed\n[Change Setting](command:getting-started-sample.changeSetting)",
+            "media": {
+              "image": "",
+              "altText": "Empty image"
+            },
+            "completionEvents": [
+              "onCommand:zim-wiki.helloZim"
+            ]
+          },
+          {
+            "id": "mac",
+            "title": "UI Platform: Mac",
+            "description": "This step will only show on a Mac.",
+            "when": "isMac",
+            "media": {
+              "markdown": ""
+            }
+          },
+          {
+            "id": "windows",
+            "title": "UI Platform: Windows",
+            "description": "This step will only show on Windows",
+            "when": "isWindows",
+            "media": {
+              "markdown": ""
+            }
+          },
+          {
+            "id": "linux",
+            "title": "UI Platform: Linux",
+            "description": "This step will only show on Linux",
+            "when": "isLinux",
+            "media": {
+              "markdown": ""
+            }
+          },
+          {
+            "id": "macRemote",
+            "title": "Workspace Platform: Mac",
+            "description": "This step will only show on Mac remotes.",
+            "when": "workspacePlatform == 'mac'",
+            "media": {
+              "markdown": "media/mac.md"
+            }
+          },
+          {
+            "id": "windowsRemote",
+            "title": "Workspace Platform: Windows",
+            "description": "This step will only show on Windows remotes",
+            "when": "workspacePlatform == 'windows'",
+            "media": {
+              "markdown": ""
+            }
+          },
+          {
+            "id": "linuxRemote",
+            "title": "Workspace Platform: Linux",
+            "description": "This step will only show on Linux remotes",
+            "when": "workspacePlatform == 'linux'",
+            "media": {
+              "markdown": ""
+            }
+          },
+          {
+            "id": "webRemote",
+            "title": "Workspace Platform: Web",
+            "description": "This step will only show on webworker remotes",
+            "when": "workspacePlatform == 'webworker'",
+            "media": {
+              "markdown": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p -w . --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.61.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "@vscode/test-electron": "^1.6.2",
+    "eslint": "^7.32.0",
+    "glob": "^7.1.7",
+    "mocha": "^9.1.1",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.3",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  }
+}
